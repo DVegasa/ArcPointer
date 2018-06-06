@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 26
@@ -28,4 +29,14 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:26.+'
     testCompile 'junit:junit:4.12'
+}
+
+publish {
+    groupId = 'io.github.dvegasa'
+    artifactId = 'arcpointer'
+    publishVersion = '1.0.0'
+    desc = 'A simple customizable arc pointer.'
+    licences = ['Apache-2.0']
+    uploadName='ArcPointer'
+    website = 'https://github.com/DVegasa/ArcPointer.git'
 }
