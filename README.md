@@ -2,7 +2,7 @@
 # ArcPointer
 ![](https://vk.com/doc174628862_466937961?hash=5ff37f4446a8c66e81&dl=005e47850c0c112032&wnd=1)
 ## Demo
-![](https://vk.com/doc174628862_466937974?hash=f3c304ca19c6e7cccf&dl=4b52fdde339d7dd313&wnd=1)
+![enter image description here](https://vk.com/doc174628862_466937974?hash=f3c304ca19c6e7cccf&dl=4b52fdde339d7dd313&wnd=1)
 ## Quick start
 
 ## Documentation
@@ -15,20 +15,14 @@
 
 ### XML attributes and Java methods
 **radius** (dp)
-
 `int getRadius()` 
-
 `void setRadius(int radius)`
-
 The radius of arc
 
 ---
 **value** (float)
-
 `float getValue()` 
-
 `void setValue(float value)`
-
 The pointer positon. Value is a float between 0 and 1 (see image above for more understanding)
 ```
      0f = left border
@@ -149,3 +143,5 @@ Color of the notches
    See the License for the specific language governing permissions and
    limitations under the License.
 ```
+Welcome file
+Welcome file. На экране.
