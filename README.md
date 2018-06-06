@@ -15,14 +15,20 @@
 
 ### XML attributes and Java methods
 **radius** (dp)
+
 `int getRadius()` 
+
 `void setRadius(int radius)`
+
 The radius of arc
 
 ---
 **value** (float)
+
 `float getValue()` 
+
 `void setValue(float value)`
+
 The pointer positon. Value is a float between 0 and 1 (see image above for more understanding)
 ```
      0f = left border
