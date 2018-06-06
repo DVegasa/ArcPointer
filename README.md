@@ -17,12 +17,14 @@
 **radius** (dp)
 `int getRadius()` 
 `void setRadius(int radius)`
+
 The radius of arc
 
 ---
 **value** (float)
 `float getValue()` 
 `void setValue(float value)`
+
 The pointer positon. Value is a float between 0 and 1 (see image above for more understanding)
 ```
      0f = left border
@@ -33,6 +35,7 @@ The pointer positon. Value is a float between 0 and 1 (see image above for more 
 **workAngle** (int) *[degrees]*
 `int getWorkAngle()`
 `void setWorkAngle(int workAngle)`
+
 The value of the angle of the arch in degrees
 
 ---
@@ -40,6 +43,7 @@ The value of the angle of the arch in degrees
 `float[] getNotches()` 
 `void setNotches(int n)`
 `void setNotches (float[] notches)`
+
 The position of notches on the arch. 
 * If you use `(int n)` overload, the `n` notches will be located evenly
 * If you use `(float[] notches)` overload, the notches will be located on the coordinates you specify
@@ -55,12 +59,14 @@ The position of notches on the arch.
 **isAnimated** (boolean)
 `boolean isAnimated()`
 `void setAnimated(boolean animated)`
+
 If true, then the value change occurs with animation.
 
 ---
 **animationVelocity** (int in XML)
 `long getAnimationVelocity()`
 `void setAnimationVelocity(long animationVelocity)`
+
 Animation speed. The smaller, the faster. Default value is  1500L
 
 {!} Calling `setAnimationVelocity` doesn't cause the redraw of View
@@ -69,6 +75,7 @@ Animation speed. The smaller, the faster. Default value is  1500L
 **lineLengthRatio** (float)
 `float getLineLengthRatio()`
 `void setLineLengthRatio(float lineLengthRatio)`
+
 Indicates the length of the line relative to the radius of the arc.
 > lineLength = radius * lineLengthRatio
 
@@ -76,54 +83,63 @@ Indicates the length of the line relative to the radius of the arc.
 **lineStrokeWidth** (float)
 `float getLineStrokeWidth()`
 `void setLineStrokeWidth(float lineStrokeWidth)`
+
 Line width. Default value is 2f
 
 ---
 **markerLengthRatio** (float)
 `float getMarkerLengthRatio()`
 `void setMarkerLengthRatio(float markerLengthRatio)`
+
 Indicates the length of the marker **relative to the length of line**
 
 ---
 **markerStrokeWidth** (float)
 `float getMarkerStrokeWidth()`
 `void setMarkerStrokeWidth(float markerStrokeWidth)`
+
 Marker width. Default value is 3f
 
 ---
 **notchesLengthRatio** (float)
 `float getNotchLengthRatio()`
 `void setNotchLengthRatio(float notchLengthRatio);`
+
 Indicates the length of the notch relative to the radius of arc
 
 ---
 **notchStrokeWidth** (float)
 `float getNotchStrokeWidth()`
 `void setNotchStrokeWidth(float notchStrokeWidth)`
+
 Notch width. Default value is 1.5f
 
 ---
 **colorBackground** (int)
 `int getColorBackground()`
 `void setColorBackground(int colorBackground)`
+
 Color of the background
 
 ---
 **colorLine** (int)
 `int getColorLine()`
 `void setColorLine(int colorLine)`
+
 Color of the line
 
 ---
 **colorMarker** (int)
 `int getColorMarker()`
 `void setColorMarker(int colorMarker)`
+
 Color of the marker
 
 ---
 **colorNotches** (int)
 `int getColorNotches()`
 `void setColorNotches(int colorNotches)`
+
 Color of the notches
 
 
