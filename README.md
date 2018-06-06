@@ -49,7 +49,8 @@ The position of notches on the arch.
 * If you use `(float[] notches)` overload, the notches will be located on the coordinates you specify
 
 `setNotches(new float[]{0.1f, 0.2f, 0.5f});`
-![enter image description here](https://pp.userapi.com/c846417/v846417961/6c9d0/MlwUmDzD4BI.jpg)
+![](https://pp.userapi.com/c846417/v846417961/6c9d0/MlwUmDzD4BI.jpg)
+
 
 `setNotches(3);`
 `setValue(0.625f);`
@@ -159,5 +160,3 @@ Color of the notches
    See the License for the specific language governing permissions and
    limitations under the License.
 ```
-Welcome file
-Welcome file. На экране.
