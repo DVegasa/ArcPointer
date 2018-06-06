@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ArcPointer">
+        <attr name="colorBackground" format="color"/>
+        <attr name="radius" format="dimension"/>
+        <attr name="workAngle" format="integer"/>
+        <attr name="colorLine" format="color"/>
+        <attr name="colorMarker" format="color"/>
+        <attr name="lineLengthRatio" format="float"/>
+        <attr name="markerLengthRatio" format ="float"/>
+        <attr name="lineStrokeWidth" format="float"/>
+        <attr name="markerStrokeWidth" format="float"/>
+        <attr name="colorNotches" format="color"/>
+        <attr name="notchLengthRatio" format="float"/>
+        <attr name="notchStrokeWidth" format="float"/>
+        <attr name="animationVelocity" format="integer"/>
+    </declare-styleable>
+</resources>

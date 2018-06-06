@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="io.github.dvegasa.arcpointer_sample.SampleActivity">
+
+    <io.github.dvegasa.arcpointer.ArcPointer
+        android:id="@+id/arcpointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:padding="0dp"
+        android:paddingTop="0dp"
+        app:colorBackground="#d7d7d7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:radius="100dp"
+        app:colorNotches="@color/colorAccent"
+        app:workAngle="120" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/arcpointer"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <Button
+                android:id="@+id/btn_notchesMinus"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="-1"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_notches"
+                app:layout_constraintLeft_toRightOf="@+id/btn_notchesPlus"
+                app:layout_constraintTop_toTopOf="@+id/tv_notches" />
+
+            <Button
+                android:id="@+id/btn_notchesPlus"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="+1"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_notches"
+                app:layout_constraintLeft_toRightOf="@+id/tv_notches"
+                app:layout_constraintTop_toTopOf="@+id/tv_notches" />
+
+            <TextView
+                android:id="@+id/tv_notches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:text="notches = 3"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_notchLengthRatio" />
+
+            <Button
+                android:id="@+id/btn_notchLengthRatioMinus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="-0.05"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_notchLengthRatio"
+                app:layout_constraintLeft_toRightOf="@+id/btn_notchLengthRatioPlus"
+                app:layout_constraintTop_toTopOf="@+id/tv_notchLengthRatio" />
+
+            <Button
+                android:id="@+id/btn_notchLengthRatioPlus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="+0.05"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_notchLengthRatio"
+                app:layout_constraintLeft_toRightOf="@+id/tv_notchLengthRatio"
+                app:layout_constraintTop_toTopOf="@+id/tv_notchLengthRatio" />
+
+            <TextView
+                android:id="@+id/tv_notchLengthRatio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:text="notchLengthRatio = 0.3f"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_notchStrokeWidth" />
+
+            <Button
+                android:id="@+id/btn_notchStrokeWidthMinus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="-0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_notchStrokeWidth"
+                app:layout_constraintLeft_toRightOf="@+id/btn_notchStrokeWidthPlus"
+                app:layout_constraintTop_toTopOf="@+id/tv_notchStrokeWidth" />
+
+            <Button
+                android:id="@+id/btn_notchStrokeWidthPlus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="+0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_notchStrokeWidth"
+                app:layout_constraintLeft_toRightOf="@+id/tv_notchStrokeWidth"
+                app:layout_constraintTop_toTopOf="@+id/tv_notchStrokeWidth" />
+
+            <TextView
+                android:id="@+id/tv_notchStrokeWidth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:text="notchStrokeWidth = 1.5"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_markerStrokeWidth" />
+
+            <Button
+                android:id="@+id/btn_markerStrokeWidthMinus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="-0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_markerStrokeWidth"
+                app:layout_constraintLeft_toRightOf="@+id/btn_markerStrokeWidthPlus"
+                app:layout_constraintTop_toTopOf="@+id/tv_markerStrokeWidth" />
+
+            <Button
+                android:id="@+id/btn_markerStrokeWidthPlus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="+0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_markerStrokeWidth"
+                app:layout_constraintLeft_toRightOf="@+id/tv_markerStrokeWidth"
+                app:layout_constraintTop_toTopOf="@+id/tv_markerStrokeWidth" />
+
+            <TextView
+                android:id="@+id/tv_markerStrokeWidth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:text="markerStrokeWidth = 3"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_lineStrokeWidth" />
+
+            <Button
+                android:id="@+id/btn_lineStrokeWidthMinus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="-0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_lineStrokeWidth"
+                app:layout_constraintLeft_toRightOf="@+id/btn_lineStrokeWidthPlus"
+                app:layout_constraintTop_toTopOf="@+id/tv_lineStrokeWidth" />
+
+            <Button
+                android:id="@+id/btn_lineStrokeWidthPlus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="+0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_lineStrokeWidth"
+                app:layout_constraintLeft_toRightOf="@+id/tv_lineStrokeWidth"
+                app:layout_constraintTop_toTopOf="@+id/tv_lineStrokeWidth" />
+
+            <TextView
+                android:id="@+id/tv_lineStrokeWidth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:text="lineStrokeWidth = 2"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_markerLengthRatio" />
+
+            <Button
+                android:id="@+id/btn_markerLengthRatioMinus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                android:text="-0.05"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_markerLengthRatio"
+                app:layout_constraintTop_toTopOf="@+id/tv_markerLengthRatio"
+                app:layout_constraintLeft_toRightOf="@+id/btn_markerLengthRatioPlus"
+                android:layout_marginLeft="8dp" />
+
+            <Button
+                android:id="@+id/btn_markerLengthRatioPlus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="+0.05"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_markerLengthRatio"
+                app:layout_constraintLeft_toRightOf="@+id/tv_markerLengthRatio"
+                app:layout_constraintTop_toTopOf="@+id/tv_markerLengthRatio" />
+
+            <TextView
+                android:id="@+id/tv_markerLengthRatio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:text="markerLengthRatio = 0.6"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_lineLengthRatio" />
+
+            <Button
+                android:id="@+id/btn_lineLengthRatioMinus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="-0.05"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_lineLengthRatio"
+                app:layout_constraintLeft_toRightOf="@+id/btn_lineLengthRatioPlus"
+                app:layout_constraintTop_toTopOf="@+id/tv_lineLengthRatio" />
+
+            <Button
+                android:id="@+id/btn_lineLengthRatioPlus"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="+0.05"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_lineLengthRatio"
+                app:layout_constraintLeft_toRightOf="@+id/tv_lineLengthRatio"
+                app:layout_constraintTop_toTopOf="@+id/tv_lineLengthRatio" />
+
+            <TextView
+                android:id="@+id/tv_lineLengthRatio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:text="lineLengthRatio = 0.8"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_workAngle" />
+
+            <Button
+                android:id="@+id/btn_workAngleMinus"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="-10"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_workAngle"
+                app:layout_constraintLeft_toRightOf="@+id/btn_workAnglePlus"
+                app:layout_constraintTop_toTopOf="@+id/tv_workAngle" />
+
+            <Button
+                android:id="@+id/btn_workAnglePlus"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="+10"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_workAngle"
+                app:layout_constraintLeft_toRightOf="@+id/tv_workAngle"
+                app:layout_constraintTop_toTopOf="@+id/tv_workAngle" />
+
+            <TextView
+                android:id="@+id/tv_workAngle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:text="workAngle = 120"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_value" />
+
+            <SeekBar
+                android:id="@+id/sb_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="0dp"
+                android:max="100"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_value"
+                app:layout_constraintLeft_toRightOf="@+id/tv_value"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_value" />
+
+            <TextView
+                android:id="@+id/tv_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="value = 0"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
