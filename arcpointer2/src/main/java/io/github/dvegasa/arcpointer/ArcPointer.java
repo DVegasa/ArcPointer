@@ -92,12 +92,9 @@ public class ArcPointer extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         int minw = getPaddingLeft() + getPaddingRight() + radius * 2;
-//        int w = (resolveSizeAndState(minw, widthMeasureSpec, 1));
 
         int minh = getPaddingBottom() + getPaddingTop() + radius * 2;
-//        int h = resolveSizeAndState(minh, heightMeasureSpec, 1);
 
-//        setMeasuredDimension(w, h);
         setMeasuredDimension(minw, minh);
     }
 
@@ -255,10 +252,7 @@ public class ArcPointer extends View {
             this.value = bundle.getFloat("value");
             this.finalValue = bundle.getFloat("finalValue");
         }
-        //TODO: {2} Choose the way of animation:
-        this.value = finalValue; /* break animation */
         this.setValue(finalValue); /* continue animation */
-        // end {2}
         invalidate();
         super.onRestoreInstanceState(state);
     }
