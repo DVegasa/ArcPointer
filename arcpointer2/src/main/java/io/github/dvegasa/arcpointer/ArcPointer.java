@@ -39,7 +39,7 @@ public class ArcPointer extends View {
     private float value;
 
     private ValueAnimator animation = null;
-
+    private float finalValue;
 
     private int startAngle;
     private int sweepAngle;
@@ -92,12 +92,13 @@ public class ArcPointer extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         int minw = getPaddingLeft() + getPaddingRight() + radius * 2;
-        int w = (resolveSizeAndState(minw, widthMeasureSpec, 1));
+//        int w = (resolveSizeAndState(minw, widthMeasureSpec, 1));
 
         int minh = getPaddingBottom() + getPaddingTop() + radius * 2;
-        int h = resolveSizeAndState(minh, heightMeasureSpec, 1);
+//        int h = resolveSizeAndState(minh, heightMeasureSpec, 1);
 
-        setMeasuredDimension(w, h);
+//        setMeasuredDimension(w, h);
+        setMeasuredDimension(minw, minh);
     }
 
     private void initPaints() {
@@ -121,7 +122,7 @@ public class ArcPointer extends View {
 
         centerX = getWidth() / 2;
         centerY = getHeight() / 2;
-        oval.set(0, 0, getWidth(), getHeight());
+        oval.set(centerX-radius, centerY-radius, centerX+radius, centerY+radius);
         canvas.drawArc(oval, startAngle, sweepAngle, true, paint);
 
         /////////////////////////////////////////////////////////////
@@ -222,6 +223,7 @@ public class ArcPointer extends View {
         bundle.putLong("animationVelocity", this.animationVelocity);
 
         bundle.putFloat("value", this.value);
+        bundle.putFloat("finalValue", this.finalValue);
 
         return bundle;
     }
@@ -251,7 +253,12 @@ public class ArcPointer extends View {
             this.animationVelocity = bundle.getLong("animationVelocity");
 
             this.value = bundle.getFloat("value");
+            this.finalValue = bundle.getFloat("finalValue");
         }
+        //TODO: {2} Choose the way of animation:
+        this.value = finalValue; /* break animation */
+        this.setValue(finalValue); /* continue animation */
+        // end {2}
         invalidate();
         super.onRestoreInstanceState(state);
     }
@@ -286,6 +293,7 @@ public class ArcPointer extends View {
         if (value < 0 || value > 1) {
             throw new RuntimeException("Param 'value' must be float between 0 and 1");
         }
+        finalValue = value;
 
         float previousValue = this.value;
 

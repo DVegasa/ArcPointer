@@ -14,11 +14,20 @@ public class MinimalConfigActivity extends AppCompatActivity {
         setContentView(R.layout.activity_minimal_config);
 
         final ArcPointer arcPointer2 = findViewById(R.id.arcpointer2);
+        arcPointer2.setNotches(3);
+        arcPointer2.setAnimated(true);
+        arcPointer2.setAnimationVelocity(500L);
+
         arcPointer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                arcPointer2.setNotches(5);
-                arcPointer2.setValue(0.6f);
+                arcPointer2.setNotches(new float[]{0.1f, 0.9f});
+                if (arcPointer2.getValue() >= 0.5f){
+                    arcPointer2.setValue(0.1f);
+                }
+                if (arcPointer2.getValue() < 0.5f){
+                    arcPointer2.setValue(0.9f);
+                }
             }
         });
     }
