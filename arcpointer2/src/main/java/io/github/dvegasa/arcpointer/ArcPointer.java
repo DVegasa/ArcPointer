@@ -60,7 +60,7 @@ public class ArcPointer extends View {
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs, R.styleable.ArcPointer, 0, 0);
         try {
-            colorBackground = a.getColor(R.styleable.ArcPointer_colorBackground, 0xCCCCCC);
+            colorBackground = a.getColor(R.styleable.ArcPointer_colorBackground, 0xFFCCCCCC);
             radius = a.getDimensionPixelSize(R.styleable.ArcPointer_radius, 250);
             workAngle = a.getInt(R.styleable.ArcPointer_workAngle, 120);
             colorLine = a.getColor(R.styleable.ArcPointer_colorLine, Color.BLACK);
@@ -70,7 +70,7 @@ public class ArcPointer extends View {
             markerLengthRatio = a.getFloat(R.styleable.ArcPointer_markerLengthRatio, 0.4f);
             lineStrokeWidth = a.getFloat(R.styleable.ArcPointer_lineStrokeWidth, 2f);
             markerStrokeWidth = a.getFloat(R.styleable.ArcPointer_markerStrokeWidth, 3f);
-            colorNotches = a.getColor(R.styleable.ArcPointer_colorNotches, 0x999999);
+            colorNotches = a.getColor(R.styleable.ArcPointer_colorNotches, 0xFF999999);
 
             notchLengthRatio = a.getFloat(R.styleable.ArcPointer_notchLengthRatio, 0.2f);
             notchStrokeWidth = a.getFloat(R.styleable.ArcPointer_notchStrokeWidth, 1.5f);
@@ -125,6 +125,32 @@ public class ArcPointer extends View {
         canvas.drawArc(oval, startAngle, sweepAngle, true, paint);
 
         /////////////////////////////////////////////////////////////
+        // Notches
+        paint.setColor(colorNotches);
+        paint.setStrokeWidth(notchStrokeWidth);
+
+        if (notches != null){
+            for (int i = 0; i < notches.length; i++) {
+                float startAngle = 90 - (workAngle / 2);
+                float additionalAngle = workAngle * notches[i];
+                float totalAngle = startAngle + additionalAngle - 90;
+
+                float markLength = radius * notchLengthRatio;
+
+                float offsetTopX = (float) (radius * Math.sin(Math.toRadians(totalAngle)));
+                float offsetTopY = (float) (radius * Math.cos(Math.toRadians(totalAngle)));
+                float offsetBottomX = (float) ((radius - markLength) * Math.sin(Math.toRadians(totalAngle)));
+                float offsetBottomY = (float) ((radius - markLength) * Math.cos(Math.toRadians(totalAngle)));
+
+                float topX = centerX + offsetTopX;
+                float topY = centerY - offsetTopY;
+                float bottomX = centerX + offsetBottomX;
+                float bottomY = centerY - offsetBottomY;
+                canvas.drawLine(topX, topY, bottomX, bottomY, paint);
+            }
+        }
+
+        /////////////////////////////////////////////////////////////
         // Line
         // angle {1}
         final float additional = workAngle * value;
@@ -170,29 +196,6 @@ public class ArcPointer extends View {
 
         canvas.drawLine(orLineStartX, orLineStartY, lineStopX, lineStopY, paint);
 
-        /////////////////////////////////////////////////////////////
-        // Notches
-        paint.setColor(colorNotches);
-        paint.setStrokeWidth(notchStrokeWidth);
-
-        for (int i = 0; i < notches.length; i++) {
-            float startAngle = 90 - (workAngle / 2);
-            float additionalAngle = workAngle * notches[i];
-            float totalAngle = startAngle + additionalAngle - 90;
-
-            float markLength = radius * notchLengthRatio;
-
-            float offsetTopX = (float) (radius * Math.sin(Math.toRadians(totalAngle)));
-            float offsetTopY = (float) (radius * Math.cos(Math.toRadians(totalAngle)));
-            float offsetBottomX = (float) ((radius - markLength) * Math.sin(Math.toRadians(totalAngle)));
-            float offsetBottomY = (float) ((radius - markLength) * Math.cos(Math.toRadians(totalAngle)));
-
-            float topX = centerX + offsetTopX;
-            float topY = centerY - offsetTopY;
-            float bottomX = centerX + offsetBottomX;
-            float bottomY = centerY - offsetBottomY;
-            canvas.drawLine(topX, topY, bottomX, bottomY, paint);
-        }
     }
 
     @Override
