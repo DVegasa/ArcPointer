@@ -1,5 +1,6 @@
 package io.github.dvegasa.arcpointer_sample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -59,6 +60,15 @@ public class SampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample);
         initViews();
+
+        Button btn_2 = findViewById(R.id.btn_2);
+        btn_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MinimalConfigActivity.class);
+                startActivity(intent);
+            }
+        });
 
         arcPointer.setNotchLengthRatio(0.3f);
         arcPointer.setNotches(3);
