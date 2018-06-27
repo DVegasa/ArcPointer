@@ -176,7 +176,7 @@ Color of the marker
 
 ---
 ~~**colorNotches**~~ (int)
-*Use ```setNotchesColors``` instead
+*Use ```setNotchesColors``` instead*
 `int getColorNotches()`
 `void setColorNotches(int colorNotches)`
 
