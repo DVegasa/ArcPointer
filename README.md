@@ -9,7 +9,7 @@ __Simple customized progress bar in the form of an arch__
 ### Step 1
 Gradle:
 ```
-compile 'io.github.dvegasa:arcpointer:1.0.1'
+compile 'io.github.dvegasa:arcpointer:1.0.2'
 ```
 
 Maven:
@@ -138,14 +138,16 @@ Indicates the length of the marker **relative to the length of line**
 Marker width. Default value is 3f
 
 ---
-**notchesLengthRatio** (float)
+~~**notchesLengthRatio**~~ (float)
+*Use ```setNotchesLengthRatio``` instead*
 `float getNotchLengthRatio()`
 `void setNotchLengthRatio(float notchLengthRatio);`
 
 Indicates the length of the notch relative to the radius of arc
 
 ---
-**notchStrokeWidth** (float)
+~~**notchStrokeWidth**~~ (float)
+*Use ```setNotchesStrokeWidth``` instead*
 `float getNotchStrokeWidth()`
 `void setNotchStrokeWidth(float notchStrokeWidth)`
 
@@ -173,13 +175,72 @@ Color of the line
 Color of the marker
 
 ---
-**colorNotches** (int)
+~~**colorNotches**~~ (int)
+*Use ```setNotchesColors``` instead
 `int getColorNotches()`
 `void setColorNotches(int colorNotches)`
 
 Color of the notches
 
+---
+**notchesColors** (only Java)
+`int[] getNotchesColors()`
+`void setNotchesColors(int color)`
+`void setNotchesColors(int[] colors)`
 
+Color of the notches.
+
+Overload `(int color)` will set color for all notches
+
+Overload `(int[] colors)` will set colors[i] color to notch[i]
+
+---
+**notchesLengthRatio**
+`float[] getNotchesLengthRatio()`
+`void setNotchesLengthRatio(float ratio)`
+`void setNotchesLengthRatio(float[] ratios)`
+
+Indicates the length of the notch relative to the radius of arc
+
+Overload `(float ratio)` will set length ratio for all notches.
+
+Overload `(float[] ratios)` will set ratio[i] length ratio to notch[i]
+
+---
+**notchesStrokeWidth**
+`float[] getNotchesStrokeWidth()`
+`void setNotchesStrokeWidth(float stroke)`
+`void setNotchesStrokeWidth(float[] stroke)`
+
+Notch width. Default value is 1.5f
+
+Overload `(float stroke)` will set stroke width for all notches.
+
+Overload `(float[] stroke)` will set stroke[i] stroke width to notch[i]
+
+---
+## ChangeLog
+### 1.0.2
+*27 June, 2018*
+
+* Added customization of single notch:
+    * Individual length
+    * Individual color
+    * Individual strokeWidth
+* Old methods for working with notches have become deprecated
+> [Sample java class with 1.0.2 features](https://github.com/DVegasa/ArcPointer/blob/master/sample/src/main/java/io/github/dvegasa/arcpointer_sample/ReleaseFeaturesSamples/v1_0_2.java)
+
+### 1.0.1
+*June, 2018*
+
+Bug fix
+
+### 1.0.0
+*June, 2018*
+
+Release
+
+---
 ## LICENSE
 ```
    Copyright 2018 Eduard Khalturin
