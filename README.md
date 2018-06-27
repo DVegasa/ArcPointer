@@ -1,10 +1,46 @@
 
 # ArcPointer
+__Simple customized progress bar in the form of an arch__
+
 ![](https://vk.com/doc174628862_466937961?hash=5ff37f4446a8c66e81&dl=005e47850c0c112032&wnd=1)
 ## Demo
 ![enter image description here](https://vk.com/doc174628862_466937974?hash=f3c304ca19c6e7cccf&dl=4b52fdde339d7dd313&wnd=1)
 ## Quick start
+### Step 1
+Gradle:
+```
+compile 'io.github.dvegasa:arcpointer:1.0.1'
+```
 
+Maven:
+```
+<dependency>
+  <groupId>io.github.dvegasa</groupId>
+  <artifactId>arcpointer</artifactId>
+  <version>1.0.1</version>
+  <type>pom</type>
+</dependency>
+```
+### Step 2
+XML:
+```XML
+<io.github.dvegasa.arcpointer.ArcPointer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:radius="150dp"
+        android:padding="8dp"
+        android:id="@+id/arcpointer"/>
+```
+
+Java:
+```Java
+        ArcPointer arcPointer = findViewById(R.id.arcpointer);
+        arcPointer.setValue(0.5f);
+        arcPointer.setNotches(9);
+        [...]
+```
+![](https://psv4.userapi.com/c848020/u174628862/docs/d5/2cf60bfd9dfd/exclamation-mark.png?extra=Tcm-M9eZIQ5GXRLHIsWhPOz-ZRn5zCtBil8OhXacg89G90xNiQI3dAYhTI32rpHQbKvrdLODhgMcBUOuHis0CyQ_4XdRJwHHJbDh0IgkHqqjAtP_8OuJIorB67l4Noi_FDldYpP41072X50)
+`android:layout_width` and `android:layout_height` should be set `"wrap_content"`. To specify the size of View, use the `radius`.
 ## Documentation
 
 ### Definitions
