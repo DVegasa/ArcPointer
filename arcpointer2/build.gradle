@@ -34,7 +34,7 @@ dependencies {
 publish {
     groupId = 'io.github.dvegasa'
     artifactId = 'arcpointer'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'A simple customizable arc pointer.'
     licences = ['Apache-2.0']
     uploadName='ArcPointer'

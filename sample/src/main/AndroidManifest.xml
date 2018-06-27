@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MinimalConfigActivity"></activity>
+        <activity android:name=".MinimalConfigActivity" />
+        <activity android:name=".ReleaseFeaturesSamples.v1_0_2"></activity>
     </application>
 
 </manifest>

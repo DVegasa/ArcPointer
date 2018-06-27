@@ -13,7 +13,7 @@ public class MinimalConfigActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minimal_config);
 
-        final ArcPointer arcPointer2 = findViewById(R.id.arcpointer2);
+        final ArcPointer arcPointer2 = (ArcPointer) findViewById(R.id.arcpointer2);
         arcPointer2.setNotches(3);
         arcPointer2.setAnimated(true);
         arcPointer2.setAnimationVelocity(500L);

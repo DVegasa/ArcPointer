@@ -29,14 +29,32 @@ public class ArcPointer extends View {
     private float markerLengthRatio;
     private float lineStrokeWidth;
     private float markerStrokeWidth;
+
+    /**
+     * @deprecated Since 1.0.2, replaced by {@link #notchesColors}
+     */
     private int colorNotches;
+
+    /**
+     * @deprecated Since 1.0.2, replaced by {@link #notchesStrokeWidth}
+     */
+    @Deprecated
     private float notchStrokeWidth;
+
+    /**
+     * @deprecated Since 1.0.2, replaced by {@link #notchesLengthRatio}
+     */
+    @Deprecated
     private float notchLengthRatio;
 
     private float[] notches;
     private boolean isAnimated;
     private long animationVelocity;
     private float value;
+
+    private float[] notchesLengthRatio; //added in v1.0.2
+    private float[] notchesStrokeWidth; //added in v1.0.2
+    private int[] notchesColors; //added in v1.0.2
 
     private ValueAnimator animation = null;
     private float finalValue;
@@ -79,6 +97,13 @@ public class ArcPointer extends View {
             a.recycle();
         }
         init();
+
+        /////////////////////////////////////////////////////////////
+        // Init default values
+        notchesLengthRatio = new float[]{0.2f};
+        notchesStrokeWidth = new float[]{3f};
+        notchesColors = new int[]{0xFF999999};
+        notches = new float[]{0.5f};
     }
 
     private void init() {
@@ -119,21 +144,41 @@ public class ArcPointer extends View {
 
         centerX = getWidth() / 2;
         centerY = getHeight() / 2;
-        oval.set(centerX-radius, centerY-radius, centerX+radius, centerY+radius);
+        oval.set(centerX - radius, centerY - radius, centerX + radius, centerY + radius);
         canvas.drawArc(oval, startAngle, sweepAngle, true, paint);
 
         /////////////////////////////////////////////////////////////
         // Notches
-        paint.setColor(colorNotches);
-        paint.setStrokeWidth(notchStrokeWidth);
+//        paint.setColor(colorNotches);
 
-        if (notches != null){
+        if (notches != null) {
             for (int i = 0; i < notches.length; i++) {
+
+                paint.setColor(colorNotches);
+
+                if (i <= notchesStrokeWidth.length - 1) {
+                    paint.setStrokeWidth(notchesStrokeWidth[i]);
+                } else {
+                    paint.setStrokeWidth(notchesStrokeWidth[notchesStrokeWidth.length - 1]);
+                }
+
+                if (i <= notchesColors.length - 1) {
+                    paint.setColor(notchesColors[i]);
+                } else {
+                    paint.setColor(notchesColors[notchesColors.length - 1]);
+                }
+
                 float startAngle = 90 - (workAngle / 2);
                 float additionalAngle = workAngle * notches[i];
                 float totalAngle = startAngle + additionalAngle - 90;
 
-                float markLength = radius * notchLengthRatio;
+//                float markLength = radius * notchLengthRatio;
+                float markLength;
+                if (i <= notchesLengthRatio.length - 1) {
+                    markLength = radius * notchesLengthRatio[i];
+                } else {
+                    markLength = radius * notchesLengthRatio[notchesLengthRatio.length - 1];
+                }
 
                 float offsetTopX = (float) (radius * Math.sin(Math.toRadians(totalAngle)));
                 float offsetTopY = (float) (radius * Math.cos(Math.toRadians(totalAngle)));
@@ -222,6 +267,11 @@ public class ArcPointer extends View {
         bundle.putFloat("value", this.value);
         bundle.putFloat("finalValue", this.finalValue);
 
+        // v 1.0.2 {
+        bundle.putFloatArray("notchesLengthRatio", this.notchesLengthRatio);
+        bundle.putFloatArray("notchesStrokeWidth", this.notchesStrokeWidth);
+        // v 1.0.2 }
+
         return bundle;
     }
 
@@ -251,6 +301,11 @@ public class ArcPointer extends View {
 
             this.value = bundle.getFloat("value");
             this.finalValue = bundle.getFloat("finalValue");
+
+            // v 1.0.2 {
+            this.notchesLengthRatio = bundle.getFloatArray("notchesLengthRatio");
+            this.notchesStrokeWidth = bundle.getFloatArray("notchesStrokeWidth");
+            // v 1.0.2 }
         }
         this.setValue(finalValue); /* continue animation */
         invalidate();
@@ -396,6 +451,7 @@ public class ArcPointer extends View {
             m[i - 1] = step * i;
         }
         this.notches = m;
+
         invalidate();
     }
 
@@ -404,35 +460,95 @@ public class ArcPointer extends View {
         invalidate();
     }
 
-    public void setMarks(float[] marks) {
-        this.notches = marks;
-        invalidate();
-    }
-
+    /**
+     * @deprecated since 1.0.2, use {@link #getNotchesLengthRatio()} instead
+     */
+    @Deprecated
     public float getNotchLengthRatio() {
-        return notchLengthRatio;
+        return notchesLengthRatio[0];
     }
 
+    /**
+     * @deprecated since 1.0.2, use {@link #setNotchesLengthRatio(float[] ratios)} and its overloads instead
+     */
+    @Deprecated
     public void setNotchLengthRatio(float notchLengthRatio) {
-        this.notchLengthRatio = notchLengthRatio;
+        setNotchesLengthRatio(notchLengthRatio);
+    }
+
+    public float[] getNotchesLengthRatio() {
+        return notchesLengthRatio;
+    }
+
+    public void setNotchesLengthRatio(float ratio) {
+        this.notchesLengthRatio = new float[]{ratio};
         invalidate();
     }
 
+    public void setNotchesLengthRatio(float[] ratios) {
+        this.notchesLengthRatio = ratios;
+        invalidate();
+    }
+
+    /**
+     * @deprecated since 1.0.2, use {@link #getNotchesColors()} instead
+     */
+    @Deprecated
     public int getColorNotches() {
         return colorNotches;
     }
 
+    /**
+     * @deprecated since 1.0.2, use {@link #setNotchesColors(int[])} and its overload instead
+     */
+    @Deprecated
     public void setColorNotches(int colorNotches) {
         this.colorNotches = colorNotches;
         invalidate();
     }
 
-    public float getNotchStrokeWidth() {
-        return notchStrokeWidth;
+    public void setNotchesColors(int[] colors) {
+        this.notchesColors = colors;
+        invalidate();
     }
 
+    public int[] getNotchesColors() {
+        return this.notchesColors;
+    }
+
+    public void setNotchesColors(int color) {
+        this.notchesColors = new int[]{color};
+        invalidate();
+    }
+
+    /**
+     * @deprecated since 1.0.2, use {@link #getNotchesStrokeWidth()} instead
+     */
+    @Deprecated
+    public float getNotchStrokeWidth() {
+        return this.notchesStrokeWidth[0];
+    }
+
+    /**
+     * @deprecated since 1.0.2, use {@link #setNotchesStrokeWidth(float[])} and its overload instead
+     */
+    @Deprecated
     public void setNotchStrokeWidth(float notchStrokeWidth) {
-        this.notchStrokeWidth = notchStrokeWidth;
+        setNotchesStrokeWidth(notchStrokeWidth);
+        invalidate();
+    }
+
+    public void setNotchesStrokeWidth(float notchesStrokeWidth) {
+        this.notchesStrokeWidth = new float[]{notchesStrokeWidth};
+        invalidate();
+    }
+
+    public float[] getNotchesStrokeWidth() {
+        return this.notchesStrokeWidth;
+    }
+
+    public void setNotchesStrokeWidth(float[] notchesStrokeWidth) {
+        this.notchesStrokeWidth = notchesStrokeWidth;
         invalidate();
     }
 

@@ -9,6 +9,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import io.github.dvegasa.arcpointer.ArcPointer;
+import io.github.dvegasa.arcpointer_sample.ReleaseFeaturesSamples.v1_0_2;
 
 public class SampleActivity extends AppCompatActivity {
 
@@ -26,33 +27,33 @@ public class SampleActivity extends AppCompatActivity {
             btn_notchesPlus, btn_notchesMinus;
 
     private void initViews(){
-        arcPointer = findViewById(R.id.arcpointer);
-        tv_value = findViewById(R.id.tv_value);
-        sb_value = findViewById(R.id.sb_value);
-        tv_workAngle = findViewById(R.id.tv_workAngle);
-        btn_workAngleMinus = findViewById(R.id.btn_workAngleMinus);
-        btn_workAnglePlus = findViewById(R.id.btn_workAnglePlus);
-        tv_lineLengthRatio = findViewById(R.id.tv_lineLengthRatio);
-        btn_lineLengthRatioPlus = findViewById(R.id.btn_lineLengthRatioPlus);
-        btn_lineLengthRatioMinus = findViewById(R.id.btn_lineLengthRatioMinus);
-        tv_markerLengthRatio = findViewById(R.id.tv_markerLengthRatio);
-        btn_markerLengthRatioPlus = findViewById(R.id.btn_markerLengthRatioPlus);
-        btn_markerLengthRatioMinus = findViewById(R.id.btn_markerLengthRatioMinus);
-        tv_lineStrokeWidth = findViewById(R.id.tv_lineStrokeWidth);
-        btn_lineStrokeWidthPlus = findViewById(R.id.btn_lineStrokeWidthPlus);
-        btn_lineStrokeWidthMinus = findViewById(R.id.btn_lineStrokeWidthMinus);
-        tv_markerStrokeWidth = findViewById(R.id.tv_markerStrokeWidth);
-        btn_markerStrokeWidthMinus = findViewById(R.id.btn_markerStrokeWidthMinus);
-        btn_markerStrokeWidthPlus = findViewById(R.id.btn_markerStrokeWidthPlus);
-        tv_notchStrokeWidth = findViewById(R.id.tv_notchStrokeWidth);
-        btn_notchStrokeWidthPlus = findViewById(R.id.btn_notchStrokeWidthPlus);
-        btn_notchStrokeWidthMinus = findViewById(R.id.btn_notchStrokeWidthMinus);
-        tv_notchLengthRatio = findViewById(R.id.tv_notchLengthRatio);
-        btn_notchLengthRatioPlus = findViewById(R.id.btn_notchLengthRatioPlus);
-        btn_notchLengthRatioMinus = findViewById(R.id.btn_notchLengthRatioMinus);
-        tv_notches = findViewById(R.id.tv_notches);
-        btn_notchesMinus = findViewById(R.id.btn_notchesMinus);
-        btn_notchesPlus = findViewById(R.id.btn_notchesPlus);
+        arcPointer = (ArcPointer) findViewById(R.id.arcpointer);
+        tv_value = (TextView) findViewById(R.id.tv_value);
+        sb_value = (SeekBar) findViewById(R.id.sb_value);
+        tv_workAngle = (TextView) findViewById(R.id.tv_workAngle);
+        btn_workAngleMinus = (Button) findViewById(R.id.btn_workAngleMinus);
+        btn_workAnglePlus = (Button) findViewById(R.id.btn_workAnglePlus);
+        tv_lineLengthRatio = (TextView) findViewById(R.id.tv_lineLengthRatio);
+        btn_lineLengthRatioPlus = (Button) findViewById(R.id.btn_lineLengthRatioPlus);
+        btn_lineLengthRatioMinus = (Button) findViewById(R.id.btn_lineLengthRatioMinus);
+        tv_markerLengthRatio = (TextView) findViewById(R.id.tv_markerLengthRatio);
+        btn_markerLengthRatioPlus = (Button) findViewById(R.id.btn_markerLengthRatioPlus);
+        btn_markerLengthRatioMinus = (Button) findViewById(R.id.btn_markerLengthRatioMinus);
+        tv_lineStrokeWidth = (TextView) findViewById(R.id.tv_lineStrokeWidth);
+        btn_lineStrokeWidthPlus = (Button) findViewById(R.id.btn_lineStrokeWidthPlus);
+        btn_lineStrokeWidthMinus = (Button) findViewById(R.id.btn_lineStrokeWidthMinus);
+        tv_markerStrokeWidth = (TextView) findViewById(R.id.tv_markerStrokeWidth);
+        btn_markerStrokeWidthMinus = (Button) findViewById(R.id.btn_markerStrokeWidthMinus);
+        btn_markerStrokeWidthPlus = (Button) findViewById(R.id.btn_markerStrokeWidthPlus);
+        tv_notchStrokeWidth = (TextView) findViewById(R.id.tv_notchStrokeWidth);
+        btn_notchStrokeWidthPlus = (Button) findViewById(R.id.btn_notchStrokeWidthPlus);
+        btn_notchStrokeWidthMinus = (Button) findViewById(R.id.btn_notchStrokeWidthMinus);
+        tv_notchLengthRatio = (TextView) findViewById(R.id.tv_notchLengthRatio);
+        btn_notchLengthRatioPlus = (Button) findViewById(R.id.btn_notchLengthRatioPlus);
+        btn_notchLengthRatioMinus = (Button) findViewById(R.id.btn_notchLengthRatioMinus);
+        tv_notches = (TextView) findViewById(R.id.tv_notches);
+        btn_notchesMinus = (Button) findViewById(R.id.btn_notchesMinus);
+        btn_notchesPlus = (Button) findViewById(R.id.btn_notchesPlus);
     }
 
     @Override
@@ -61,11 +62,20 @@ public class SampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sample);
         initViews();
 
-        Button btn_2 = findViewById(R.id.btn_2);
+        Button btn_2 = (Button) findViewById(R.id.btn_2);
         btn_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MinimalConfigActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btn_1_0_2 = (Button) findViewById(R.id.btn_1_0_2);
+        btn_1_0_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), v1_0_2.class);
                 startActivity(intent);
             }
         });
