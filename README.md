@@ -2,9 +2,9 @@
 # ArcPointer
 __Simple customized progress bar in the form of an arch__
 
-![](https://vk.com/doc174628862_466937961?hash=5ff37f4446a8c66e81&dl=005e47850c0c112032&wnd=1)
+![thumbnail](https://psv4.userapi.com/c848324/u174628862/docs/d1/cb89a7022161/arc.png?extra=sOoPwWgH91RwMkKD5Y1ZkKNSLS4S-LUe-FHleEvaq4KtycqbFJNyz0ziBwiKeJfb5BeGrHz9G5NKdb4GLBwkURkDZYGhec0Y1BJcNQZDKjF6B-Tx-UrPuojFMDt-MfF0u-jRXT8wI-wPHnB5OS5iKtaA)
 ## Demo
-![enter image description here](https://vk.com/doc174628862_466937974?hash=f3c304ca19c6e7cccf&dl=4b52fdde339d7dd313&wnd=1)
+![gif animation](https://psv4.userapi.com/c848324/u174628862/docs/d9/37c019aad53b/arcpointer_demo.gif?extra=00ZAC50144PSJAwEgV2IXMhDjOoRkNIn9Ll7Q8-FQzSPaTVJSuHSMxn5vmiw4oHABT4B_c2t9oBVvONAiiDro1O3UDjPADgiLgKJuoM5xLEuGtoQuSFz66v9H2tdRAdRXemmSD9iLDNmKkn1uP9ixrT6)
 ## Quick start
 ### Step 1
 Gradle:
