@@ -2,9 +2,9 @@
 # ArcPointer
 __Simple customized progress bar in the form of an arch__
 
-![thumbnail](https://psv4.userapi.com/c848324/u174628862/docs/d1/cb89a7022161/arc.png?extra=sOoPwWgH91RwMkKD5Y1ZkKNSLS4S-LUe-FHleEvaq4KtycqbFJNyz0ziBwiKeJfb5BeGrHz9G5NKdb4GLBwkURkDZYGhec0Y1BJcNQZDKjF6B-Tx-UrPuojFMDt-MfF0u-jRXT8wI-wPHnB5OS5iKtaA)
+![Thumbnail](https://s278iva.storage.yandex.net/rdisk/9c0b6abd8f3f95d740ecdb89b17c28d1392d523196da820a990e06feeddbe13e/5f576a23/dQ95tMT5iy0cO3tzLeEfNACunpEy2xCZPw7_QL2FbnocMz5-Qow4OYShmrOLCD011R1y6LHe6OOc6vWLh4-L8A==?uid=0&filename=preview.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&owner_uid=660827330&media_type=image&hid=7824b1bf121d97a85a57dbae9bea9a0a&etag=847e21634c48095afaf6fd0e435caf58&fsize=7383&rtoken=qr6RcH0TuS2O&force_default=no&ycrid=na-ad609329b1387f63fbb58b5de606ef87-downloader23h&ts=5aecb97448ec0&s=7eac9c45f764af50456866b7c8771c96228fcca8e35105cdea283639cdf14b3f&pb=U2FsdGVkX19K4c8Ik3SI4-psKvzCQdczIB5XDJEES_9xeV_gyvbn2UpCo-yqM798GWywQsfZSQDXBcPqsPB7EAWJAfkF9G-URzaCcXOvb6c)
 ## Demo
-![gif animation](https://psv4.userapi.com/c848324/u174628862/docs/d9/37c019aad53b/arcpointer_demo.gif?extra=00ZAC50144PSJAwEgV2IXMhDjOoRkNIn9Ll7Q8-FQzSPaTVJSuHSMxn5vmiw4oHABT4B_c2t9oBVvONAiiDro1O3UDjPADgiLgKJuoM5xLEuGtoQuSFz66v9H2tdRAdRXemmSD9iLDNmKkn1uP9ixrT6)
+![Demo gif animation](https://s46vla.storage.yandex.net/rdisk/71734789a95a16f49944523220ffc94e6e01e003a8fa6acec33ee437a1e62ddf/5f5769c6/dQ95tMT5iy0cO3tzLeEfNAsWHWoxeKlZ44NgW3S2O-AzIuOKmY8jkpOvUKQ0zg69stpfDHUauW0vmuuRNcTkpA==?uid=0&filename=demo.gif&disposition=inline&hash=&limit=0&content_type=image%2Fgif&tknv=v2&owner_uid=660827330&etag=0adf892a656136ce306d959cbb8406f0&fsize=2185909&media_type=image&hid=03e04ad21480c1e76d83d41837d74872&rtoken=6hkkNWpHeDd6&force_default=no&ycrid=na-df9cb4538ec205f9715c0757513e4079-downloader23h&ts=5aecb91b97d80&s=357b4d31c1fcb4c1a8739e3dd4c9dd45a9232de9d403904947dfaa6270e300b0&pb=U2FsdGVkX1_ewqYxKnyk_P01oSaAVVSikZa1DUHOVZhdkDax1FWUnsg0RXvwYZndSWq74mFagDeBoCEqz9phVLVYtrSJcknJg1Cr-ai-XFA)
 ## Quick start
 ### Step 1
 Gradle:
